@@ -14,7 +14,11 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = ContactAdapter(testData,{phoneItem : PhoneData -> phoneItemList(phoneItem)})
+        recyclerView.adapter = ContactAdapter(testData) { phoneItem: PhoneData ->
+            phoneItemList(
+                phoneItem
+            )
+        }
     }
 
     private fun phoneItemList(phoneItem: PhoneData) {
