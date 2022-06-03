@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         val testData = createPhoneData()
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
         recyclerView.adapter = ContactAdapter(testData,{phoneItem : PhoneData -> phoneItemList(phoneItem)})
     }
 
@@ -25,9 +26,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun createPhoneData() : List<PhoneData>{
         val list = ArrayList<PhoneData>()
-        list.add(PhoneData(9864934,"Alpha"))
-        list.add(PhoneData(1341933,"Bravo"))
-        list.add(PhoneData(1401524,"Charlie"))
+        list.add(PhoneData(9864934321,"Alpin"))
+        list.add(PhoneData(1341933131,"Bruno"))
+        list.add(PhoneData(1401524342,"Ujang"))
+        list.add(PhoneData(822123123,"Suep"))
+        list.add(PhoneData(8213123414,"Markona"))
+        list.add(PhoneData(892675631,"Juminten"))
+        list.add(PhoneData(892675631,"Juminten"))
+        list.add(PhoneData(78319791,"Ronaldo"))
+        list.add(PhoneData(1243141343,"Inem"))
+        list.add(PhoneData(8545452523,"Tukiem"))
         return list
     }
 }
